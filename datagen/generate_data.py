@@ -108,9 +108,9 @@ def generate_loan_info_row(loan_id: int) -> dict[str, Any]:
             previous_payment_amount=round(
                 10 ** random.randint(1, 5) * random.random(), 2
             ),
-            next_payment_amount=round(10 ** random.randint(1, 5) * random.random(), 2),
-            credit_limit_amount=round(10 ** random.randint(1, 5) * random.random(), 0),
-            number_of_unique_delinquencies=random.randint(0, 20),
+            next_payment_amount=round(10 ** random.randint(2, 4) * random.random(), 2),
+            credit_limit_amount=round(10 ** random.randint(3, 5) * random.random(), 0),
+            number_of_unique_delinquencies=random.randint(0, 10),
         )
     )
 
