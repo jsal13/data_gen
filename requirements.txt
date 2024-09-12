@@ -1,0 +1,4 @@
+faker~=24.1
+ipykernel~=6.29
+matplotlib~=3.8
+pandas~=2.2
