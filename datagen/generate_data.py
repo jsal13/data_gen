@@ -3,6 +3,7 @@ from datetime import date, datetime, timedelta, timezone
 from decimal import Decimal
 from typing import Any
 
+import duckdb
 import pandas as pd
 from attrs import asdict, define
 from faker import Faker
@@ -197,7 +198,12 @@ def dump_to_csv(payload: dict[str, pd.DataFrame]) -> None:
     for val, df in payload.items():
         df.to_csv(f"./data/{val}.csv", index=False)
 
+def dump_to_duckdb(payload: dict[str, pd.DataFrame]) -> None:
+    """Dump everything into DuckDB."""
+    with duckdb.connect("./database.db") as con:
+        for val, df in payload.items():  # noqa: B007
+            con.sql(f"CREATE TABLE {val} AS SELECT * FROM df")
 
 if __name__ == "__main__":
-    data = generate_all()
-    dump_to_csv(payload=data)
+    payload = generate_all()
+    dump_to_duckdb(payload=payload)
