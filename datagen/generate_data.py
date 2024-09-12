@@ -184,12 +184,14 @@ def generate_all() -> dict[str, pd.DataFrame]:
     loan_info = generate_loan_info_rows()
     lenders = generate_lenders()
     statuses = generate_loan_statuses()
+    loan_customer_list = associate_loans_with_customers()
 
     return {
         "customers": pd.DataFrame(customers),
         "loan_info": pd.DataFrame(loan_info),
         "lenders": pd.DataFrame(lenders),
         "statuses": pd.DataFrame(statuses),
+        "loan_customer_lookup": pd.DataFrame(loan_customer_list)
     }
 
 
