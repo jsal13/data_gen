@@ -7,8 +7,8 @@ name = "data_gen"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.10"
-license = "LICENSE"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
 
 # This field adds keywords for your project which will appear on the
 # project page. What does your project relate to?
@@ -59,6 +59,12 @@ dependencies = [
     "faker~=24.1",
     "ipykernel~=6.29",
     "pandas~=2.2",
+    "dbt-duckdb~=1.8.2",
+    "duckdb~=1.0.0",
+    "dagster-dbt~=0.24",
+    "dbt-adapters~=1.4",
+    "dbt-common~=1.7",
+    "dbt-core~=1.8"
 ]
 
 # List additional groups of dependencies here (e.g. development
@@ -72,7 +78,6 @@ dependencies = [
 # https://packaging.python.org/en/latest/specifications/dependency-specifiers/#extras
 [project.optional-dependencies]
 dev = [
-    "mypy~=1.9",
     "pandas-stubs~=2.2",
     "pytest~=8.1",
     "ruff~=0.3",
