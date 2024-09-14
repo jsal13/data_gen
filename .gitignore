@@ -1,3 +1,5 @@
+*.db
+
 .ruff_cache/
 .venv/
 .vscode/
