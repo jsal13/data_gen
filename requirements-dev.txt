@@ -1,7 +1,6 @@
-attrs~=23.2
-coverage~=7.4
-mypy~=1.9
-pandas-stubs~=2.2
-pytest-mock~=3.14
-pytest~=8.1
-ruff~=0.3
+attrs
+coverage
+mypy
+pytest-mock
+pytest
+ruff

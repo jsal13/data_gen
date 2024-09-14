@@ -1,4 +1,4 @@
-# LoanSchemaGen
+# data_gen
 
 ## Description
 

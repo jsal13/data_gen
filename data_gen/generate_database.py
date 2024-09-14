@@ -1,5 +1,5 @@
 import random
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from typing import Any
 
@@ -83,7 +83,7 @@ def generate_loan_info_row(loan_id: int) -> dict[str, Any]:
 
     recorded = fake.date_time()
     next_payment_on = fake.date_between_dates(
-        recorded + timedelta(days=10), datetime.now(timezone.utc)
+        recorded + timedelta(days=10), datetime.now(UTC)
     )
     previous_payment_on = fake.date_between_dates(
         recorded - timedelta(days=random.randint(7, 70)), recorded

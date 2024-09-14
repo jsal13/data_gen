@@ -3,20 +3,16 @@ set shell := ["zsh", "-cu"]
 default:
   just --list
 
-docs-serve:
-  mkdocs serve
-
-docs-build:
-  mkdocs build
-
 venv: 
-  python -m venv .venv
-  # Use uv package to pip install.
-  # Ref: https://github.com/astral-sh/uv?tab=readme-ov-file#highlights
-  source .venv/bin/activate \
-    && pip install uv \
+  pip install --upgrade uv
+  uv venv \
+    && source .venv/bin/activate \
     && uv pip install -r requirements.txt \
     && uv pip install -r requirements-dev.txt
+
+ds:
+  source .venv/bin/activate \
+    && uv pip install -r requirements-ds.txt
 
 test:
   python -m pytest --doctest-modules ./tests
