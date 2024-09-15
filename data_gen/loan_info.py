@@ -18,7 +18,7 @@ class LoanInfoRow(BaseTable):
     lender_id: int
 
     # dates
-    recorded_on: datetime
+    recorded_at: datetime
     followup_on: date
     previous_payment_on: date
     next_payment_on: date
@@ -55,7 +55,7 @@ class LoanInfoRow(BaseTable):
             loan_status_id=random.randint(0, 2),
             lender_id=random.randint(0, 5),
             # dates
-            recorded_on=recorded,
+            recorded_at=recorded,
             followup_on=followup_on,
             previous_payment_on=previous_payment_on,
             next_payment_on=next_payment_on,

@@ -22,7 +22,7 @@ def generate_all() -> dict[str, pd.DataFrame]:
 
     return {
         "customers": customers,
-        "loan_info_rows": loan_info_rows,
+        "loan_info": loan_info_rows,
         "lenders": lenders,
         "statuses": statuses,
         "loan_customer_lookup": loan_customer_lookup,
